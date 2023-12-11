@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="view/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <title>Rebel Retro Refuge</title>
 </head>
@@ -13,11 +13,19 @@
     </header>
 
     <nav>
+        <?php
+            $scriptName = basename($_SERVER['PHP_SELF']);
+        ?>
         <ul>
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="jogos.php">Jogos</a></li>
-            <li><a href="consolas.php" class="corrente">Consolas</a></li>
-            <li><a href="contactos.php">Contactos</a></li>
+            <li><a href="index.php"
+                <?php echo $scriptName == 'index.php' ? "class='corrente'" : '' ?>
+            >Inicio</a></li>
+            <li><a href="arcades.php"
+                <?php echo $scriptName == 'index.php' ? "class='corrente'" : '' ?>
+            >Arcades</a></li>
+            <li><a href="contactos.php"
+                <?php echo $scriptName == 'index.php' ? "class='corrente'" : '' ?>
+            >Contactos</a></li>
         </ul>
 
         <?php 
@@ -29,5 +37,3 @@
 
         ?>
     </nav>
-</body>
-</html>

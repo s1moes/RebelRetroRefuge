@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro - Rebel Retro Refuge</title>
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="view/register.css">
 </head>
 <body>
     <form action="register_process.php" method="post">

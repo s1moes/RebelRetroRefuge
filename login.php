@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login - Rebel Retro Refuge</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="view/login.css">
 </head>
 <body>
     <form action="login_process.php" method="post">
