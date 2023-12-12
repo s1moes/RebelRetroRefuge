@@ -1,22 +1,16 @@
 <?php
+
+    include('model/acessoDB.php');
+
     session_start();
 
-    $usersFile = 'users.json';
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    if (!file_exists($usersFile)) {
+    if (!userExistes($username, $password)) {
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
         header('Location: login.php?error=true');
         exit();
-    }
-
-    $users = json_decode(file_get_contents($usersFile), true);
-
-    $input_username = $_POST['username'];
-    $input_password = $_POST['password'];
-
-    if (isset($users[$input_username]) && password_verify($input_password, $users[$input_username]['password'])) {
-        $_SESSION['username'] = $input_username;
-        header('Location: index.php');
-    } else {
-        header('Location: login.php?error=true');
     }
 ?>
