@@ -21,7 +21,9 @@ function getReservationsWithArcades(){
 }
 
 function getReservationWithArcades($reservationId){
-
+    $conn = connectDB();
+    $stmt = $conn->prepare("SELECT FROM arcade_reserva WHERE ('reserva_id' = :reserva_id)");
+    $stmt->execute( [ 'reserva_id' => $reservationId ] );
 }
 
 ?>
