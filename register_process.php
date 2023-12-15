@@ -1,28 +1,26 @@
 <?php
-    session_start();
 
-    $usersFile = 'users.json';
+include('model/acessoDB.php');
 
-    $users = file_exists($usersFile) ? json_decode(file_get_contents($usersFile), true) : [];
+session_start();
 
-    $input_username = $_POST['username'];
-    $input_password = $_POST['password'];
-    $input_confirm_password = $_POST['confirm_password'];
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    if ($input_password == $input_confirm_password) {
-        if (isset($users[$input_username])) {
-            header('Location: register.php?error=true');
-        } else {
-            $users[$input_username] = [
-                'username' => $input_username,
-                'password' => password_hash($input_password, PASSWORD_DEFAULT)
-            ];
-
-            file_put_contents($usersFile, json_encode($users));
-
-            header('Location: login.php');
-        }
-    } else {
-        header('Location: register.php?error=true');
+    if (userExistes($username, $password)) {
+        header('Location: register.php?error=user_exists');
+        exit();
     }
+
+    addUser($username, password_hash($password, PASSWORD_DEFAULT));
+
+    $_SESSION['username'] = $username;
+
+    header('Location: index.php');
+    exit();
+} else {
+    header('Location: register.php?error=missing_fields');
+    exit();
+}
 ?>

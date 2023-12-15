@@ -3,9 +3,9 @@
 function connectDB() {
 
     $hostname = 'localhost';
-    $dbname = 'id21660241_rebel';
-    $username = 'id21660241_rebel';
-    $password = 'K#v!&r5pLm9qXsT';
+    $dbname = 'rebel';
+    $username = 's1moes';
+    $password = 's1moes';
 
     try {
         $conn = new PDO("mysql:host=$hostname;dbname=$dbname;charset=utf8mb4",
@@ -18,19 +18,24 @@ function connectDB() {
     return $conn;
 }
 
-function addUser( $username, $pass ) {
+function addUser( $username, $password ) {
     $conn = connectDB();
-    $stmt = $conn->prepare("INSERT INTO utilizador ('username', 'pass') VALUES (:username, :pass)");
-    $stmt->execute( [ 'username' => $username, 'pass' => $pass ] );
+    $stmt = $conn->prepare("INSERT INTO utilizador (username, pass) VALUES (:username, :pass)");
+    $stmt->execute( [ 'username' => $username, 'pass' => $password ] );
 }
 
-function userExistes( $username, $pass ) {
+function userExistes($username, $password){
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT username FROM utilizador WHERE username=:username and pass=:pass");
-    $stmt->execute( [ 'username' => $username, 'pass' => $pass ] );
+    $stmt = $conn->prepare("SELECT username, pass FROM utilizador WHERE username=:username");
+    $stmt->execute(['username' => $username]);
+    
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($user && password_verify($password, $user['pass'])) {
+        return $user;
+    }
 
-
+    return false;
+    
 }
-
-
 ?>
