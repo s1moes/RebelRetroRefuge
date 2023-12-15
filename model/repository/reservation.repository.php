@@ -1,6 +1,6 @@
 <?php
-require ("acessoDB.php");
-require ("arcadeReservation.repository.php");
+require ("model/acessoDB.php");
+require ("model/arcadeReservation.repository.php");
 
 function createReservation($userId, $arcade_id){
     $conn = connectDB();
@@ -14,9 +14,9 @@ function createReservation($userId, $arcade_id){
 
 function cancelReservation($reservationId){
     $conn = connectDB();
-    $stmt = $conn->prepare("DELETE FROM reserva WHERE (:id_reserva)");
+    $stmt = $conn->prepare("DELETE FROM reserva WHERE ('id_reserva' = :id_reserva)");
     $stmt->execute( [ 'id_reserva' => $reservationId ] );
-    
+
     removeArcadeInReservation($reservationId);
 }
 
@@ -24,13 +24,15 @@ function getReservations(){
     $conn = connectDB();
     $stmt = $conn->query("SELECT * FROM reserva");
     $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    $reservationsWithArcades = getReservationsWithArcades();
 	return $reservations;
+    return $reservationsWithArcades;
 }
 
 function getReservation($reservationId){
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT FROM reserva WHERE (:id_reserva)");
+    $stmt = $conn->prepare("SELECT FROM reserva WHERE ('id_reserva' = :id_reserva)");
     $stmt->execute( [ 'id_reserva' => $reservationId ] );
+    getReservationWithArcades($reservationId);
 }
 ?>
