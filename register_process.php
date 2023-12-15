@@ -1,6 +1,6 @@
 <?php
 
-include('model/acessoDB.php');
+require('model/repository/user.repository.php');
 
 session_start();
 
