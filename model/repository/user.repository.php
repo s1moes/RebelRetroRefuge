@@ -9,7 +9,9 @@ function addUser( $username, $pass ) {
 
 
 function deleteUser($userId){
-    
+    $conn = connectDB();
+    $stmt = $conn->prepare("DELETE FROM utilizador WHERE (:userId)");
+    $stmt->execute( [ 'userId' => $userId ] );
 }
 
 function userExistes( $username, $pass ) {
