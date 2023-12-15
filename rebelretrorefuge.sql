@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `arcade` (
   `id_arcade` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL
+  `nome` varchar(255) DEFAULT NULL,
+  `imagem` varchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
