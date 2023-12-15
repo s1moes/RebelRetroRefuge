@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Configura o layout para coluna (vertical) */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.sidebar {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    width: 260px;
+    height: 100vh;
+    box-sizing: border-box;
+    align-self: left;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 5px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 8px;
+}
+
+.sidebar nav a:hover {
+    background-color: #555;
+}
+
+.user-info {
+    margin-top: 20px;
+}
+
+.corrente {
+    background-color: #555;
+    font-weight: bold;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
