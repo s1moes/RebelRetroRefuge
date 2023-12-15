@@ -1,5 +1,6 @@
 <?php
-require ("acessoDB.php");
+require ("model/acessoDB.php");
+require ("model/arcadeReservation.repository.php");
 
 function getArcades(){
     $conn = connectDB();
