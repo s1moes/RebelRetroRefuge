@@ -28,4 +28,12 @@ function userExistes($username, $password){
     return false;
     
 }
+
+function getUsers() {
+    $conn = connectDB();
+    $stmt = $conn->query("SELECT * FROM utilizador");
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	return $users;
+}
 ?>
