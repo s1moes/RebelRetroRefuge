@@ -14,7 +14,7 @@ function createReservation($userId, $arcade_id){
 
 function cancelReservation($reservationId){
     $conn = connectDB();
-    $stmt = $conn->prepare("DELETE FROM reserva WHERE (:id_reserva)");
+    $stmt = $conn->prepare("DELETE FROM reserva WHERE ('id_reserva' = :id_reserva)");
     $stmt->execute( [ 'id_reserva' => $reservationId ] );
 
     removeArcadeInReservation($reservationId);
@@ -31,7 +31,7 @@ function getReservations(){
 
 function getReservation($reservationId){
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT FROM reserva WHERE (:id_reserva)");
+    $stmt = $conn->prepare("SELECT FROM reserva WHERE ('id_reserva' = :id_reserva)");
     $stmt->execute( [ 'id_reserva' => $reservationId ] );
     getReservationWithArcades($reservationId);
 }
