@@ -1,6 +1,5 @@
 <?php
 require ("model/acessoDB.php");
-require ("model/arcadeReservation.repository.php");
 
 function addArcadeToReservation($reservationId, $arcade_id) {
 
