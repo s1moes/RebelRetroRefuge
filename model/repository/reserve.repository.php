@@ -1,5 +1,6 @@
 <?php
 require ("acessoDB.php");
+require ("arcadeReservation.repository.php");
 
 function createReservation($userId, $arcade_id){
     $conn = connectDB();
@@ -15,6 +16,8 @@ function cancelReservation($reservationId){
     $conn = connectDB();
     $stmt = $conn->prepare("DELETE FROM reserva WHERE (:id_reserva)");
     $stmt->execute( [ 'id_reserva' => $reservationId ] );
+    
+    removeArcadeInReservation($reservationId);
 }
 
 function getReservations(){
