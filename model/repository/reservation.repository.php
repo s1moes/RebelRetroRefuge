@@ -24,13 +24,15 @@ function getReservations(){
     $conn = connectDB();
     $stmt = $conn->query("SELECT * FROM reserva");
     $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    ge
+    $reservationsWithArcades = getReservationsWithArcades();
 	return $reservations;
+    return $reservationsWithArcades;
 }
 
 function getReservation($reservationId){
     $conn = connectDB();
     $stmt = $conn->prepare("SELECT FROM reserva WHERE (:id_reserva)");
     $stmt->execute( [ 'id_reserva' => $reservationId ] );
+    getReservationWithArcades($reservationId);
 }
 ?>
