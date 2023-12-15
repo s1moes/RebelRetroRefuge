@@ -8,4 +8,21 @@ function getArcades(){
 
 	return $arcades;
 }
+
+function getArcade($arcadeId){
+
+}
+
+function addArcade($arcadeName, $arcadeImage){
+
+}
+
+function deleteArcade($arcadeId) {
+
+}
+
+function getArcadeByModel($arcadeModel){
+}
+
+
 ?>
