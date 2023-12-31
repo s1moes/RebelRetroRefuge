@@ -1,58 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Life+Savers&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto","Arial",sans-serif;
+    background-color: aliceblue;
     margin: 0;
     padding: 0;
+}
+
+.main {
     display: flex;
-    flex-direction: column; /* Configura o layout para coluna (vertical) */
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: white;
+    height: 85px;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+.primary-nav {
+    align-items: center;
+    display: flex;
 }
 
-.sidebar {
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    width: 260px;
-    height: 100vh;
-    box-sizing: border-box;
-    align-self: left;
-}
-
-.sidebar nav ul {
+.nav-tab {
     list-style-type: none;
-    padding: 0;
+    margin-left: 18px;
 }
 
-.sidebar nav ul li {
-    margin-bottom: 5px;
-}
-
-.sidebar nav a {
+.nav-tab a {
     text-decoration: none;
-    color: white;
-    display: block;
-    padding: 8px;
+    color: black;
 }
 
-.sidebar nav a:hover {
-    background-color: #555;
+.second-nav{
+    margin-left: 900px;
 }
 
-.user-info {
-    margin-top: 20px;
+.second-nav a {
+    text-decoration: none;
+    margin-right: 18px;
+    color: black;
 }
 
-.corrente {
-    background-color: #555;
-    font-weight: bold;
-}
-
-.content {
-    flex-grow: 1;
-    padding: 20px;
+.logotipo {
+    width: 170px;
+    margin-left: 10px;
 }
