@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Life+Savers&display=swap');
+
+body {
+    font-family: "Roboto", "Arial", sans-serif;
+    background-color: #ffffff;
+    color: #232323;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #494949; 
+    background-color: #ffffff;
+    height: 85px;
+    padding: 10px;
+    margin: 3px;
+}
+
+.primary-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.nav-tab {
+    list-style-type: none;
+    margin-left: 18px;
+}
+
+.nav-tab a {
+    text-decoration: none;
+    color: #494949;
+    font-size: 17px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-tab a:hover {
+    color: #3498db;
+}
+
+.nav-tab a.corrente {
+    color: #3498db;
+}
+
+.nav-tab a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: -5px;
+    left: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+.nav-tab a:hover::before,
+.nav-tab a.corrente::before {
+    width: 100%;
+}
+
+.second-nav {
+    display: flex;
+    align-items: center;
+}
+
+.second-nav a {
+    text-decoration: none;
+    margin-right: 18px;
+    color: #3498db;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 2.5px solid #3498db;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.second-nav a:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.second-nav a:hover {
+    width: 100%;
+}
+
+.logotipo {
+    width: 170px;
+}
+
+.user-info {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 13px;
+    background-color: white;
+    color: #494949;
+    border-top: 3px solid #494949;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-weight: bold;
+}
+
+.sobre h3{
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+}

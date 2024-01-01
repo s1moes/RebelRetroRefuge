@@ -11,7 +11,7 @@ function getArcades(){
 
 function getArcade($arcadeId){
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT FROM arcade WHERE ('id_arcade' = :id_arcade)");
+    $stmt = $conn->prepare("SELECT * FROM arcade WHERE id_arcade = :id_arcade");
     $stmt->execute( [ 'id_arcade' => $arcadeId ] );
     getReservationWithArcades($arcadeId);
 }
@@ -33,6 +33,4 @@ function getArcadeByModel($arcadeModel){
     $stmt = $conn->prepare("SELECT FROM arcade WHERE ('id_arcade' = :id_arcade)");
     $stmt->execute( [ 'id_arcade' => $arcadeModel ] );
 }
-
-
 ?>
