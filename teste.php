@@ -1,8 +1,9 @@
 <?php
     include("model/repository/arcade.repository.php"); 
 
-    echo "<pre>";
-    print_r(getArcade(1));
-    echo "</pre>";
+    deleteArcade(15);
 
+    echo "<pre>";
+    print_r(getArcades());
+    echo "</pre>";
 ?>
