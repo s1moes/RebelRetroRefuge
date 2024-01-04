@@ -1,3 +1,26 @@
+-- Tabela para armazenar informações dos utilizadores
+CREATE TABLE utilizador (
+    id_utilizador INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    pass VARCHAR(255) NOT NULL
+);
+
+-- Tabela para armazenar informações das arcades
+CREATE TABLE arcade (
+    id_arcade INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    imagem VARCHAR(255) NOT NULL
+);
+
+-- Tabela para armazenar informações das reservas
+CREATE TABLE reserva (
+    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    id_arcade INT,
+    hora_reserva TIME NOT NULL,
+    FOREIGN KEY (id_arcade) REFERENCES arcade(id_arcade)
+);
+
 INSERT INTO `arcade` (`nome`, `imagem`) VALUES
 ('Michael Jackson’s Moonwalker', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Michael-Jacksons-Moonwalker.jpg'),
 ('Simpsons: The Arcade Game', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Simpsons-The-Arcade-Game.jpg'),
