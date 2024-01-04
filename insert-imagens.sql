@@ -1,0 +1,17 @@
+INSERT INTO `arcade` (`nome`, `imagem`) VALUES
+('Michael Jackson’s Moonwalker', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Michael-Jacksons-Moonwalker.jpg'),
+('Simpsons: The Arcade Game', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Simpsons-The-Arcade-Game.jpg'),
+('Knights of the Round', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Knights-of-the-Round.jpg'),
+('The King of Fighters ’98', 'https://jogoveio.com.br/wp-content/uploads/2018/07/The-King-of-Fighters-98.png'),
+('NBA Jam', 'https://jogoveio.com.br/wp-content/uploads/2018/07/NBA-Jam.png'),
+('Metal Slug 2\r\n', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Metal-Slug-2.png'),
+('Captain Commando', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Captain-Commando.jpg'),
+('Teenage Mutant Ninja Turtles', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Teenage-Mutant-Ninja-Turtles-Turtles-in-Time.jpg'),
+('Sunset Riders', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Sunset-Riders.jpg'),
+('Street Fighter II\r\n', 'https://jogoveio.com.br/wp-content/uploads/2018/07/Street_Fighter_II_arcade.png'),
+('Space Adventure Pinball', 'https://lh3.googleusercontent.com/BLO6DZJDLmLDMLVQhtKQYHpGNuLsc91z1gW_-aaIcpwAL6BDFXIdhV-pKA_YsgyHIfqqvieJyfVIpxnQEkFg6jaQhA=w640-h400-e365-rj-sc0x00ffffff'),
+('Asphalt Retro', 'https://images.crazygames.com/games/asphalt-retro/cover-1676316474869.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop'),
+('Pac-Man', 'https://image.api.playstation.com/cdn/EP0700/CUSA03862_00/7YeqsfpCnlYOEWmOePFx8wv6bqiUdR92.png'),
+('FIFA International Soccer', 'https://lh3.googleusercontent.com/proxy/7IxKrxKkSxmY3pA2YvtzHCeRVyrrc-7QqRfqUqVHrCBj_eOMS6IJylDmdx2kKreqFiMjEFcIya4aRd1692z8ZNMOLSEQQfjrGUq8KCp5PG89OGyIAnDZz8JyCKcxrVpHIsNDios-KPzu7Ta2Yg'),
+('Tekken 3', 'https://assets-prd.ignimgs.com/2022/03/13/tekken3-1647189672174.jpg'),
+('Mortal Kombat II', 'https://i.ytimg.com/vi/_e2hlsi42c4/maxresdefault.jpg');

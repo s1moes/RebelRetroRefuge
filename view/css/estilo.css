@@ -118,3 +118,52 @@ footer {
     padding: 20px;
     text-transform: uppercase;
 }
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    text-align: center;
+}
+
+div.arcade {
+    border: 1px solid #c0c0c0;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+div.arcade h4 {
+    margin-top: 5px;
+
+}
+
+div.arcade img {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+div.arcade form {
+    padding: 10px;
+}
+
+div.arcade .btnReservar {
+    padding: 7px;
+    border-radius: 10px;
+    background-color: #c0c0c0;
+    color: #494949;
+    font-weight: bold;
+    border: 0;
+}
+
+div.arcade .btnReservar:hover {
+    padding: 7px;
+    border-radius: 10px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    cursor: pointer;
+}
