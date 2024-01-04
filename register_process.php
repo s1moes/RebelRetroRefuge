@@ -1,7 +1,7 @@
 <?php
 
 require('model/repository/user.repository.php');
-
+session_destroy();
 session_start();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
