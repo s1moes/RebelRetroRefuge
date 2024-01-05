@@ -19,7 +19,7 @@
         <div class="second-nav">
                 <?php 
                     if (isset($_SESSION['username'])) {
-                        echo '<div class="user-info">Bem-vindo, ' . $_SESSION['username'] . '!<br><br><a href="logout.php">Logout</a></div>';
+                        echo '<div class="user-info">Bem-vindo, <a href="profile.php"> . $_SESSION['username'] . </a>!<br><br><a href="logout.php">Logout</a></div>';
                     } else {
                         echo '<div class="user-info"><a href="login.php">Login</a> <a href="register.php">Register</a></div>';
                     }
