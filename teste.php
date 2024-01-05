@@ -1,9 +1,9 @@
 <?php
-    include("model/repository/arcade.repository.php"); 
+    include("model/acessoDB.php"); 
 
-    deleteArcade(15);
+    cancelReservation(6);
 
     echo "<pre>";
-    print_r(getArcades());
+    print_r(getReservations("Francisco"));
     echo "</pre>";
 ?>

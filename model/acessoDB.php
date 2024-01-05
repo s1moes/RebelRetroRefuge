@@ -26,19 +26,19 @@ function createReservation($id_arcade, $username, $hora_reserva)
 }
 
 
-function cancelReservation($id_utilizador, $id_reserva)
+function cancelReservation($id_reserva)
 {
     $conn = connectDB();
-    $stmt = $conn->prepare("DELETE FROM reserva WHERE id_utilizador = :id_utilizador AND id_reserva = :id_reserva");
-    $stmt->execute(['id_utilizador' => $id_utilizador, 'id_reserva' => $id_reserva]);
+    $stmt = $conn->prepare("DELETE FROM reserva WHERE id_reserva = :id_reserva");
+    $stmt->execute(['id_reserva' => $id_reserva]);
 }
 
-function getReservations($id_utilizador)
+function getReservations($user)
 {
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT id_reserva FROM reserva WHERE id_utilizador = :id_utilizador");
-    $stmt->execute(['id_utilizador' => $id_utilizador]);
-    $reservations = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    $stmt = $conn->prepare("SELECT * FROM reserva WHERE username=:username");
+    $stmt->execute(['username' => $user]);
+    $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $reservations;
 }
 
@@ -52,7 +52,7 @@ function getArcades(){
 
 function getArcade($arcadeId){
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT * FROM arcade WHERE id_arcade = :id_arcade");
+    $stmt = $conn->prepare("SELECT nome, imagem FROM arcade WHERE id_arcade = :id_arcade");
     $stmt->execute( [ 'id_arcade' => $arcadeId ] );
     $arcade = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
