@@ -10,7 +10,6 @@
 
         $arcade = getArcade($id_arcade);
         echo <<<LISTA
-        form
         <ul>
             <li>"Reserva: " $id_reserva</li>
             <li>"Hora: " $hora_reserva</li>
