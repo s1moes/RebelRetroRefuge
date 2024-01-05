@@ -1,6 +1,6 @@
 <?php
 
-require('model/repository/user.repository.php');
+require('model/acessoDB.php');
 
 session_destroy();
 session_start();
