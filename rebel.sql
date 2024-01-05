@@ -35,6 +35,6 @@ INSERT INTO `arcade` (`nome`, `imagem`) VALUES
 ('Space Adventure Pinball', 'https://lh3.googleusercontent.com/BLO6DZJDLmLDMLVQhtKQYHpGNuLsc91z1gW_-aaIcpwAL6BDFXIdhV-pKA_YsgyHIfqqvieJyfVIpxnQEkFg6jaQhA=w640-h400-e365-rj-sc0x00ffffff'),
 ('Asphalt Retro', 'https://images.crazygames.com/games/asphalt-retro/cover-1676316474869.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop'),
 ('Pac-Man', 'https://image.api.playstation.com/cdn/EP0700/CUSA03862_00/7YeqsfpCnlYOEWmOePFx8wv6bqiUdR92.png'),
-('FIFA International Soccer', 'https://lh3.googleusercontent.com/proxy/7IxKrxKkSxmY3pA2YvtzHCeRVyrrc-7QqRfqUqVHrCBj_eOMS6IJylDmdx2kKreqFiMjEFcIya4aRd1692z8ZNMOLSEQQfjrGUq8KCp5PG89OGyIAnDZz8JyCKcxrVpHIsNDios-KPzu7Ta2Yg'),
+('FIFA International Soccer', 'https://t.ctcdn.com.br/3ZqDSOf5sPs-PNukqv1N3VlDF9U=/1024x0/smart/i304277.jpeg'),
 ('Tekken 3', 'https://assets-prd.ignimgs.com/2022/03/13/tekken3-1647189672174.jpg'),
 ('Mortal Kombat II', 'https://i.ytimg.com/vi/_e2hlsi42c4/maxresdefault.jpg');
