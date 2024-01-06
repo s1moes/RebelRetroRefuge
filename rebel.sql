@@ -18,7 +18,7 @@ CREATE TABLE reserva (
     id_reserva INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     id_arcade INT,
-    hora_reserva TIME NOT NULL,
+    data_reserva DATETIME NOT NULL,
     FOREIGN KEY (id_arcade) REFERENCES arcade(id_arcade)
 );
 
