@@ -52,7 +52,7 @@ function getArcades(){
 
 function getArcade($arcadeId){
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT nome, imagem FROM arcade WHERE id_arcade = :id_arcade");
+    $stmt = $conn->prepare("SELECT nome, imagem, descricao FROM arcade WHERE id_arcade = :id_arcade");
     $stmt->execute( [ 'id_arcade' => $arcadeId ] );
     $arcade = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
