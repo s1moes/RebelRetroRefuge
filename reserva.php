@@ -7,12 +7,12 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
 if (!empty($username)) {
 
-    if (isset($_POST['id_arcade'])) {
+    if (isset($_POST['datetime'])) {
         $idArcade = $_POST['id_arcade'];
-        $horaReserva = $_POST['hora_reserva'];
+        $datareserva = $_POST['datetime'];
 
         if (isset($_POST['btnReservar'])) {
-            createReservation($idArcade, $username, $horaReserva);
+            createReservation($idArcade, $username, $dataReserva);
         }
     }
 }

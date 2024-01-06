@@ -1,0 +1,6 @@
+.bg-image {
+    background-image: url('https://i.pinimg.com/564x/15/b8/25/15b825780d23bcc5db366c78afd239bb.jpg');
+}
+.col-6 p-3 m-3 bg-dark text-white rounded {
+    box-shadow: 60px -16px teal !important;
+}
