@@ -2,7 +2,6 @@
     <div class="container text-center">
         <div class="row gap-3">
             <?php
-            // <?php echo ceil(sizeof($arcades)) 
             $arcades = getArcades();
             foreach ($arcades as $arcade_data) {
                 $arcade_imagem = $arcade_data['imagem'];
