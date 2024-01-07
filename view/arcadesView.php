@@ -13,6 +13,7 @@
                             <h3 class="text-white">$arcade_nome</h3>
                             <img src="$arcade_imagem" width="512px">
                             <input type="hidden" name="id_arcade" value="$id_arcade">
+                            <button type="submit" class="btn btn-outline-light m-3">Reservar</button>
                         </form>
                     </div>
                 ARCADES;
