@@ -1,6 +1,6 @@
 <div class="bg-image min-vh-100">
         <div class="container text-center">
-                <div class="row align-items-center d-flex align-items-center">
+                <div class="row">
                         <div class="col">
                         </div>
                         

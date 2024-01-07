@@ -9,14 +9,14 @@ $arcadeDescricao = $arcade[0]["descricao"];
 
 <div class="bg-image min-vh-100">
         <div class="container text-center">
-                <div class="row align-items-center d-flex align-items-center">
+                <div class="row align-items-center">
                         <div class="col">
                         </div>
                         <div class="col-6 p-3 m-3 bg-dark text-white rounded" >
                                 <h1 class="text-white"><?php echo $arcadeNome ?></h1>
                                 <img src="<?php echo $arcadeImagem ?>" width="512px" alt="">
                         </div>
-                        <div class="col p-3 m-3 bg-dark text-white">
+                        <div class="col p-3 m-3 bg-dark text-white rounded">
                                 <p class="text-white"><?php echo $arcadeDescricao ?></p>  
                                 <form action="reserva.php" method="post">
                                 <label for="date">Seleccione a data e hora da reserva:</label>
