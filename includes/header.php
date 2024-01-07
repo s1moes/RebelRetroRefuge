@@ -10,13 +10,13 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
-            <?php $scriptName = basename($_SERVER['PHP_SELF']); ?>
+            <?php $paginaAtual = basename($_SERVER['PHP_SELF']);?>
             <a class="navbar-brand" href="index.php">RebelRetroRefuge</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="index.php" <?php echo $scriptName == 'index.php' ? 'class="nav-link active" aria-current="page"' : '' ?>>Inicio</a>
-                    <a class="nav-link" href="arcades.php" <?php echo $scriptName == 'arcades.php' ? 'class="nav-link active" aria-current="page"' : '' ?>>Arcades</a>
-                    <a class="nav-link" href="sobre.php" <?php echo $scriptName == 'sobre.php' ? 'class="nav-link active" aria-current="page"' : '' ?>>Sobre</a>
+                <?php $paginaAtual == 'index.php' ? $paginaAtiva = 'class="nav-link active" aria-current="page"' : $paginaAtiva ='class="nav-link"' ?> <a <?php echo $paginaAtiva ?> href="index.php">Inicio</a>
+                <?php $paginaAtual == 'arcades.php' ? $paginaAtiva = 'class="nav-link active" aria-current="page"' : $paginaAtiva ='class="nav-link"' ?> <a <?php echo $paginaAtiva ?> href="arcades.php">Arcades</a>
+                <?php $paginaAtual == 'sobre.php' ? $paginaAtiva = 'class="nav-link active" aria-current="page"' : $paginaAtiva ='class="nav-link"' ?> <a <?php echo $paginaAtiva ?> href="sobre.php" >Sobre</a>
                 </div>  
             </div>
             <div class="navbar-nav">
@@ -26,7 +26,7 @@
                         echo '<a class="nav-link" href="logout.php">Logout</a>';
                     } else {
                         echo '<a class="nav-link" href="login.php">Login</a>'; 
-                        echo '<a class="nav-link" href="register.php">Register</a>';
+                        echo '<a class="nav-link" href="register.php">Registar</a>';
                     }
                 ?>
             </div>  
