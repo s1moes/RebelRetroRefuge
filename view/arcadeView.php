@@ -24,7 +24,7 @@ $arcadeDescricao = $arcade[0]["descricao"];
                                 <select name="time" required>
                                         <?php
                                         for ($hora = 9; $hora <= 17; $hora++) {
-                                                echo "<option value='$hora'>$hora:00 - " . ($hora + 1) . ":00</option>";
+                                                echo "<option name='hour' value='$hora'>$hora:00 - " . ($hora + 1) . ":00</option>";
                                         }
                                         ?>
                                 </select>
