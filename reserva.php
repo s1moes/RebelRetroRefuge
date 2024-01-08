@@ -10,7 +10,7 @@ if (!empty($username)) {
     if (isset($_POST['date'])) {
         $idArcade = $_POST['idArcade'];
         $data = $_POST['date'];
-        $hora = $_POST['hour'];
+        $hora = $_POST['time'];
 
         createReservation($idArcade, $username, $data, $hora);
 
