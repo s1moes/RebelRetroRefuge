@@ -17,12 +17,12 @@ function connectDB() {
     return $conn;
 }
 
-function createReservation($id_arcade, $username, $datatime)
+function createReservation($id_arcade, $username, $date, $hour)
 {
     $conn = connectDB();
 
-    $stmtReserva = $conn->prepare("INSERT INTO reserva (id_arcade, username, data_reserva) VALUES (:id_arcade, :username, :data_reserva)");
-    $stmtReserva->execute(['id_arcade' => $id_arcade, 'username' => $username, 'data_reserva' => $datatime]);
+    $stmtReserva = $conn->prepare("INSERT INTO reserva (id_arcade, username, data_reserva, hora_reserva) VALUES (:id_arcade, :username, :data_reserva, hora_reserva)");
+    $stmtReserva->execute(['id_arcade' => $id_arcade, 'username' => $username, 'data_reserva' => $date, 'hora_reserva' => $hour]);
 }
 
 
