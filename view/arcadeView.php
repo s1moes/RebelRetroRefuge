@@ -27,15 +27,19 @@ $arcadeDescricao = $arcade[0]["descricao"];
                                         <label for="date">Seleccione a data e hora da reserva:</label>
                                         <input type="date" name="date" min=$dataMin required>
                                         <select name="time" required>
-                                                for ($hora = 9; $hora <= 17; $hora++) {
-                                                        <option name="hour" value=$hora>$hora:00 - ($hora + 1) :00</option>
-                                                }
+                                    FORM;
+                                    
+                                        for ($hora = 9; $hora <= 17; $hora++) {
+                                            echo "<option name='hour' value=$hora>$hora:00 - " . $hora + 1 . " :00</option>";
+                                        }
+                                    
+                                        echo <<<FORM
                                         </select>
                                         <input type="hidden" name="idArcade" value=$idArcade>
                                         <button type="submit" name="btnReservar" class="btn btn-outline-light m-3">Reservar</button>
                                         </form>
-                                        FORM;
-                                }
+                                    FORM;
+                                    }                                    
                                 ?>
                              
                                 
