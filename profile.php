@@ -2,6 +2,12 @@
 
     session_start();
 
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
+    if (!empty($username)) {
+
+       header("index.php");
+       exit;
+    }
     include("model/acessoDB.php");
     include('includes/header.php');
     include('view/profileView.php');
