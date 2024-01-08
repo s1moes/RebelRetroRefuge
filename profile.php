@@ -3,9 +3,9 @@
     session_start();
 
     $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-    if (!empty($username)) {
+    if (empty($username)) {
 
-       header("index.php");
+       header("Location: index.php");
        exit;
     }
     include("model/acessoDB.php");
