@@ -1,5 +1,6 @@
 <?php
 $idArcade = isset($_POST["id_arcade"]) ? $_POST["id_arcade"] : '';
+$user = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
 $arcade = getArcade($idArcade);
 $arcadeNome = $arcade[0]["nome"];
@@ -18,19 +19,26 @@ $arcadeDescricao = $arcade[0]["descricao"];
                         </div>
                         <div class="col p-3 m-3 bg-dark text-white rounded">
                                 <p class="text-white"><?php echo $arcadeDescricao ?></p>  
-                                <form action="reserva.php" method="post">
-                                <label for="date">Seleccione a data e hora da reserva:</label>
-                                <input type="date" name="date" min="<?php echo date("Y-m-d"); ?>" required>
-                                <select name="time" required>
-                                        <?php
-                                        for ($hora = 9; $hora <= 17; $hora++) {
-                                                echo "<option name='hour' value='$hora'>$hora:00 - " . ($hora + 1) . ":00</option>";
-                                        }
-                                        ?>
-                                </select>
-                                <input type="hidden" name="idArcade" value="<?php echo $idArcade ?>">
-                                <button type="submit" class="btn btn-outline-light m-3">Reservar</button>
-                                </form>      
+                                <?php 
+                                $dataMin = date("Y-m-d");
+                                if (!empty($user)) {
+                                        echo <<<FORM
+                                        <form action="reserva.php" method="post">
+                                        <label for="date">Seleccione a data e hora da reserva:</label>
+                                        <input type="date" name="date" min=$dataMin required>
+                                        <select name="time" required>
+                                                for ($hora = 9; $hora <= 17; $hora++) {
+                                                        <option name="hour" value=$hora>$hora:00 - ($hora + 1) :00</option>
+                                                }
+                                        </select>
+                                        <input type="hidden" name="idArcade" value=$idArcade>
+                                        <button type="submit" name="btnReservar" class="btn btn-outline-light m-3">Reservar</button>
+                                        </form>
+                                        FORM;
+                                }
+                                ?>
+                             
+                                
                         </div>
                 </div>
         </div>
