@@ -22,7 +22,6 @@ CREATE TABLE reserva (
     id_arcade INT,
     data_reserva DATE,
     hora_reserva INT,
-    data_expiracao DATETIME ,
     FOREIGN KEY (id_arcade) REFERENCES arcade(id_arcade)
 );
 
