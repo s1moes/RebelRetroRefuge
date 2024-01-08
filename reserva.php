@@ -7,9 +7,12 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
 if (!empty($username)) {
 
-    if (isset($_POST['datetime'])) {
+    if (isset($_POST['date'])) {
         $idArcade = $_POST['id_arcade'];
-        $datareserva = $_POST['datetime'];
+        $data = $_POST['date'];
+        $hora = $_POST['hour'];
+
+        createReservation($idArcade, $username, $data, $hora);
 
         /* if (isset($_POST['btnReservar'])) {
             createReservation($idArcade, $username, $dataReserva);
@@ -17,9 +20,6 @@ if (!empty($username)) {
     }
 }
 
-function verificarDisponibilidade(){
-    
-}
 header('Location:arcades.php');
 exit;
 ?>
