@@ -1,7 +1,9 @@
 <?php
 
 require('model/acessoDB.php');
-session_destroy();
+if (isset($_SESSION) && !empty($_SESSION)) {
+    session_destroy();
+}
 session_start();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
