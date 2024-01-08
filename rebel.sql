@@ -1,3 +1,5 @@
+CREATE DATABASE rebel;
+use rebel;
 -- Tabela para armazenar informações dos utilizadores
 CREATE TABLE utilizador (
     id_utilizador INT AUTO_INCREMENT PRIMARY KEY,
