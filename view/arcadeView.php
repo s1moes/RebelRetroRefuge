@@ -1,5 +1,9 @@
 <?php
 $idArcade = isset($_POST["id_arcade"]) ? $_POST["id_arcade"] : '';
+if (empty($idArcade)) {
+        header("arcades.php");
+        exit;
+}
 $user = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
 $arcade = getArcade($idArcade);
