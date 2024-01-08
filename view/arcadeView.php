@@ -30,7 +30,7 @@ $arcadeDescricao = $arcade[0]["descricao"];
                                     FORM;
                                     
                                         for ($hora = 9; $hora <= 17; $hora++) {
-                                            echo "<option name='hour' value=$hora>$hora:00 - " . $hora + 1 . " :00</option>";
+                                            echo "<option value=$hora>$hora : 00 - " . $hora + 1 . " : 00</option>";
                                         }
                                     
                                         echo <<<FORM
