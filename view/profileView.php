@@ -32,6 +32,7 @@
         $username = $reserva['username'];
         $nomeArcade = $reserva['id_arcade'];
         $hora_reserva = $reserva['hora_reserva'];
+        $data_reserva = $reserva['data_reserva'];
 
         $arcade = getArcade($nomeArcade);
         $nomeArcade = isset($arcade[0]['nome']) ? $arcade[0]['nome'] : 'Nome não encontrado';
@@ -42,6 +43,7 @@
             <ul class="ul-profile">
                 <li class="li-profile"><img src="$imagemArcade" alt="Imagem do Jogo" class="img-profile"></li>
                 <li class="li-profile">Reserva: $id_reserva</li>
+                <li class="li-profile">Data: $data_reserva</li>
                 <li class="li-profile">Hora: $hora_reserva</li>
                 <li class="li-profile">Arcade: $nomeArcade</li>
                 <input type="hidden" name="id_reserva" value="$id_reserva">

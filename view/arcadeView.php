@@ -34,7 +34,8 @@ $arcadeDescricao = $arcade[0]["descricao"];
                                     FORM;
                                     
                                         for ($hora = 9; $hora <= 17; $hora++) {
-                                            echo "<option value=$hora>$hora:00 - " . $hora + 1 . ":00</option>";
+                                                $horaFormatada = str_pad($hora, 2, '0', STR_PAD_LEFT) . ':00';
+                                                echo "<option value=$horaFormatada>$horaFormatada - " . str_pad($hora + 1, 2, '0', STR_PAD_LEFT) . ":00</option>";
                                         }
                                     
                                         echo <<<FORM
