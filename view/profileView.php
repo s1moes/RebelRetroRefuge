@@ -4,6 +4,29 @@
     $reservas = getReservations($user);
     $arcades = getArcades();
 
+    echo <<<MUDARPASS
+        <form action="" method="post" class="form-profile">
+        <input type="text" name="novaPass">
+        <input type="submit" name="mudarPass" value="Mudar">
+        </form>
+    MUDARPASS;
+
+    if (isset($_POST['novaPass'])) {
+        $novaPass = $_POST['novaPass'];
+
+        if (!empty($novaPass)) {
+            $mudancaPassSucesso = mudarPass($user, $novaPass);
+                
+            if ($mudancaPassSucesso) {
+                echo "Password alterada com sucesso!";
+            } else {
+                echo "Erro ao alterar a password. Tente novamente.";
+            }
+        } else {
+                echo "Por favor, insira uma nova password.";
+        }
+    }
+
     foreach ($reservas as $reserva) {
         $id_reserva = $reserva['id_reserva'];
         $username = $reserva['username'];
@@ -15,12 +38,12 @@
         $imagemArcade = isset($arcade[0]['imagem']) ? $arcade[0]['imagem'] : 'Imagem não encontrada';
 
         echo <<<LISTA
-        <form action="cancelarReserva.php" method="post">
-            <ul>
-                <li><img src="$imagemArcade" alt="Imagem do Jogo"></li>
-                <li>Reserva: $id_reserva</li>
-                <li>Hora: $hora_reserva</li>
-                <li>Arcade: $nomeArcade</li>
+        <form action="cancelarReserva.php" method="post" class="form-profile">
+            <ul class="ul-profile">
+                <li class="li-profile"><img src="$imagemArcade" alt="Imagem do Jogo" class="img-profile"></li>
+                <li class="li-profile">Reserva: $id_reserva</li>
+                <li class="li-profile">Hora: $hora_reserva</li>
+                <li class="li-profile">Arcade: $nomeArcade</li>
                 <input type="hidden" name="id_reserva" value="$id_reserva">
                 <input type="submit" name="btnCancelar" value="Cancelar" class="btnCancelar">
             </ul>
