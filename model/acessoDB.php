@@ -92,6 +92,25 @@ function deleteUser($userId){
     $stmt->execute( [ 'id_utilizador' => $userId ] );
 }
 
+function mudarPass($username, $newPassword){
+    $conn = connectDB();
+
+    try {
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+        $stmt = $conn->prepare("UPDATE utilizador SET pass = :pass WHERE username = :username");
+        $stmt->bindParam(':pass', $hashedPassword);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+
+    return true;
+    } catch (PDOException $e) {
+        return false;
+    } finally {
+        $conn = null;
+    }
+}
+
 function userExistes($username, $password){
     $conn = connectDB();
     $stmt = $conn->prepare("SELECT username, pass FROM utilizador WHERE username=:username");
