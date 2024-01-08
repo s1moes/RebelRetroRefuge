@@ -8,7 +8,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 if (!empty($username)) {
 
     if (isset($_POST['date'])) {
-        $idArcade = $_POST['id_arcade'];
+        $idArcade = $_POST['idArcade'];
         $data = $_POST['date'];
         $hora = $_POST['hour'];
 
