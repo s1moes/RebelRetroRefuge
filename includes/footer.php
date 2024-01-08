@@ -1,4 +1,4 @@
-    <footer class="p-3 mb-2 bg-dark text-white ">
+    <footer class="p-3 bg-dark text-white ">
         <div class="container text-center ">
                 <div class="row align-items-center">
                         <div class="col">
