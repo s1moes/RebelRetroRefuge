@@ -24,15 +24,6 @@ CREATE TABLE reserva (
     FOREIGN KEY (id_arcade) REFERENCES arcade(id_arcade)
 );
 
-DELIMITER //
-CREATE TRIGGER set_expiration_time
-BEFORE INSERT ON reserva
-FOR EACH ROW
-BEGIN
-    SET NEW.data_expiracao = TIMESTAMPADD(HOUR, 1, CONCAT(NEW.data_reserva, ' ', NEW.hora_reserva, ':00:00'));
-END;
-//
-DELIMITER ;
 
 INSERT INTO `arcade` (`nome`, `imagem`, `descricao`) VALUES
 ("Michael Jackson's Moonwalker", 'https://upload.wikimedia.org/wikipedia/en/d/d4/Moonwalker_arcade_flyer.jpg', "Michael Jackson's Moonwalker é o nome de vários jogos de vídeo baseados no filme de 1988 de Michael Jackson, Moonwalker. A Sega desenvolveu dois beat 'em ups, lançados em 1990; um lançado nos arcades e outro lançado para as consolas Sega Genesis e Master System. Cada um dos enredos dos jogos segue vagamente o segmento 'Smooth Criminal' do filme, em que Jackson salva crianças raptadas do malvado Mr. Big, e incorpora versões sintetizadas de algumas das canções do músico."),
