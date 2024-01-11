@@ -133,4 +133,15 @@ function getUsers() {
 
 	return $users;
 }
+
+function reservationExists($idArcade, $date, $hour)
+{
+    $conn = connectDB();
+    $stmt = $conn->prepare("SELECT * FROM reserva WHERE id_arcade = :id_arcade AND data_reserva = :data_reserva AND hora_reserva = :hora_reserva");
+    $stmt->execute(['id_arcade' => $idArcade, 'data_reserva' => $date, 'hora_reserva' => $hour]);
+    $existingReservation = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $existingReservation ? true : false;
+}
+
 ?>

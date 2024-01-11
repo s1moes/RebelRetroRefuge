@@ -11,7 +11,12 @@ if (!empty($username)) {
         $data = $_POST['date'];
         $hora = $_POST['time'];
 
-        createReservation($idArcade, $username, $data, $hora);
+        if (reservationExists($idArcade, $data, $hora)) {
+            $_SESSION['error_message'] = 'A reserva já existe para a data e hora selecionadas.';
+        } else {
+            createReservation($idArcade, $username, $data, $hora);
+            $_SESSION['success_message'] = 'Reserva criada com sucesso!';
+        }
     }
 }
 

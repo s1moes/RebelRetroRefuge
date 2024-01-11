@@ -27,23 +27,23 @@ $arcadeDescricao = $arcade[0]["descricao"];
                                 $dataMin = date("Y-m-d");
                                 if (!empty($user)) {
                                         echo <<<FORM
-                                        <form action="reserva.php" method="post">
-                                        <label for="date">Seleccione a data e hora da reserva:</label>
-                                        <input type="date" name="date" min=$dataMin required>
-                                        <select name="time" required>
-                                    FORM;
-                                    
-                                        for ($hora = 9; $hora <= 17; $hora++) {
+                                                <form action="reserva.php" method="post">
+                                                <label for="date">Seleccione a data e hora da reserva:</label>
+                                                <input type="date" name="date" min="$dataMin" required>
+                                                <select name="time" required>
+                                                FORM;
+
+                                                for ($hora = 9; $hora <= 17; $hora++) {
                                                 $horaFormatada = str_pad($hora, 2, '0', STR_PAD_LEFT) . ':00';
-                                                echo "<option value=$horaFormatada>$horaFormatada - " . str_pad($hora + 1, 2, '0', STR_PAD_LEFT) . ":00</option>";
-                                        }
-                                    
-                                        echo <<<FORM
-                                        </select>
-                                        <input type="hidden" name="idArcade" value=$idArcade>
-                                        <button type="submit" name="btnReservar" class="btn btn-outline-light m-3">Reservar</button>
-                                        </form>
-                                    FORM;
+                                                echo "<option value=\"$horaFormatada\">$horaFormatada - " . str_pad($hora + 1, 2, '0', STR_PAD_LEFT) . ":00</option>";
+                                                }
+
+                                                echo <<<FORM
+                                                </select>
+                                                <input type="hidden" name="idArcade" value="$idArcade">
+                                                <button type="submit" name="btnReservar" class="btn btn-outline-light m-3">Reservar</button>
+                                                </form>
+                                                FORM;
                                     }                                    
                                 ?>
                              
