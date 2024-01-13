@@ -11,7 +11,7 @@
                     <div class="col p-3 m-3 bg-dark text-white rounded" href>
                         <form action="arcade.php" method="post">
                             <h3 class="text-white">$arcade_nome</h3>
-                            <img src="$arcade_imagem" width="512px">
+                            <img src="$arcade_imagem" width="588px">
                             <input type="hidden" name="id_arcade" value="$id_arcade">
                             <button type="submit" class="btn btn-outline-light m-3">Reservar</button>
                         </form>
@@ -21,5 +21,4 @@
             ?>
         </div>
     </div>
-</div>
 </div>

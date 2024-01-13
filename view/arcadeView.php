@@ -19,7 +19,7 @@ $arcadeDescricao = $arcade[0]["descricao"];
                         </div>
                         <div class="col-6 p-3 m-3 bg-dark text-white rounded" >
                                 <h1 class="text-white"><?php echo $arcadeNome ?></h1>
-                                <img src="<?php echo $arcadeImagem ?>" width="512px" alt="">
+                                <img src="<?php echo $arcadeImagem ?>" width="100%" alt="">
                         </div>
                         <div class="col p-3 m-3 bg-dark text-white rounded">
                                 <p class="text-white"><?php echo $arcadeDescricao ?></p>  
